@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    window.onload = startup;
+    
+    function startup(){
+      
+    var res = 0;
+    for(var i = 0; i < 9; i++) {
+        if(res < 8) {
+        res += i;
+        }
+    }
+    document.getElementById("utskrift").innerHTML = res;
+    }
+ /*0 1 3 6 10 15 21 28*/
+    
+</script>
+
+</head>
+
+<body>
+<p id="utskrift"></p>
+</body>
+</html>

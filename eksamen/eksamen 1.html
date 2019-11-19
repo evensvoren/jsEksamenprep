@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction() {
+var a = "Hei på deg";
+var b = a.split(" ");
+var c = 0;
+
+for(var i = 0; i < b.length; i++){
+  c += b[i].length;
+}
+  document.getElementById("utskrift").innerHTML = c;
+}
+</script>
+</head>
+
+<body>
+<p id="utskrift"></p>
+<button type="button" onclick="myFunction()">try it</button>
+</body>
+
+</html>

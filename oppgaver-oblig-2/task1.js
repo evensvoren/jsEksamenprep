@@ -1,5 +1,5 @@
 window.onload = dropDown;
-
+var shoppinglist = [];
 function dropDown(){
     var numbOption = "<option value='0'>select amount</option>";
     for(var i = 1; i < 20; i++){
@@ -9,18 +9,20 @@ function dropDown(){
 }
 
 function clickButton(){
-    dropDown();
     var writeField = document.getElementById("inputField").value;
-    var shoppinglist = [];
-    var arrnumb = shoppinglist.push(writeField);
-        document.getElementById("listElements").innerHTML += arrnumb + shoppinglist;
-   
+        var arrnumb = shoppinglist.push(writeField);
+        var lastElement = shoppinglist[shoppinglist.length -1];
+        document.getElementById("listElements").innerHTML = shoppinglist + " ";
+        document.getElementById("funStuff").innerHTML = shoppinglist[0] +  " " + lastElement +  " " + arrnumb + " ";
+    
     console.log(shoppinglist);
     
 }
 function undoButton(){
-    
-    var writeField = document.getElementById("inputField").value;
-    var shoppinglist = [];
-    shoppinglist.pop(writeField);
+    var arrlength = shoppinglist[shoppinglist.length];
+    var lastElement = shoppinglist[shoppinglist.length -1];
+    var popped = shoppinglist.pop();
+    console.log(popped);
+    document.getElementById("listElements").innerHTML = shoppinglist;
+    document.getElementById("funStuff").innerHTML = shoppinglist[0] + " " + lastElement + "  " + arrlength + " ";
 }
